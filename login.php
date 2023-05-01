@@ -21,6 +21,9 @@
     </div>
 
     <?php
+
+        include('conexao.php');
+
         if(isset($_POST['acao'])) {
             if(isset($_POST['nome']) || isset($_POST['cargo'])) {
                 if(strlen($_POST['nome']) == 0) {
@@ -28,6 +31,19 @@
                 } else if(strlen($_POST['cargo']) == 0) {
                     echo "<script> alert('Insira seu cargo.') </script>";
                 } else {
+                    $nome = $mysqli->real_escape_string($_POST['nome']);
+                    $cargo = $mysqli-real_escape_string($_POST['cargo']);
+
+                    $sql_code = "SELECT * FROM tb_usuario WHERE nome = '$nome' AND cargo = '$cargo'";
+                    $sql_query = $mysqli->query($sql_code) or die("Falha na consulta do código SQL: " . $mysqli->error);
+
+                    $quantidade = $sql_query->num_rows;
+
+                    if($quantidade == 1) {
+
+                    } else {
+                        echo "<script> alert('Esse jogador não existe.') </script>";
+                    }
 
                 }
             }
