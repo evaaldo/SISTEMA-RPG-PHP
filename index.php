@@ -17,7 +17,7 @@ include('conexao.php');
     <ul>
         <h3>Usuários</h3>
         <li><a href="login.php">Acessar Usuário</a></li>
-        <li><a href="">Criar Usuário</a></li>
+        <li><a href="cadastro.php">Criar Usuário</a></li>
     </ul>
     <ul>
         <h3>Jogar</h3>

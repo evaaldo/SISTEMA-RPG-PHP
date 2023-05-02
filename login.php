@@ -7,6 +7,7 @@
     <title>Zoro - Entrar</title>
 </head>
 <body>
+    <!-- tela de login - HTML -->
     <form method="POST">
         <label for="nome">Nome</label>
         <input type="text" name="nome">
@@ -20,7 +21,7 @@
         <a href="cadastro.php">Não é um jogador?</a>
     </div>
 
-    <?php
+    <?php //tela de login - PHP
 
         include('conexao.php');
 
@@ -32,7 +33,7 @@
                     echo "<script> alert('Insira seu cargo.') </script>";
                 } else {
                     $nome = $mysqli->real_escape_string($_POST['nome']);
-                    $cargo = $mysqli-real_escape_string($_POST['cargo']);
+                    $cargo = $mysqli->real_escape_string($_POST['cargo']);
 
                     $sql_code = "SELECT * FROM tb_usuario WHERE nome = '$nome' AND cargo = '$cargo'";
                     $sql_query = $mysqli->query($sql_code) or die("Falha na consulta do código SQL: " . $mysqli->error);
@@ -40,9 +41,10 @@
                     $quantidade = $sql_query->num_rows;
 
                     if($quantidade == 1) {
-
+                        echo "<script> alert('Bem-vindo, jogador.'); </script>";
                     } else {
-                        echo "<script> alert('Esse jogador não existe.') </script>";
+                        echo "<script> alert('Esse jogador não existe.'); </script>";
+                        header('Location: index.php');
                     }
 
                 }
