@@ -12,7 +12,7 @@
         <input type="text" name="nomeCadastro">
         <label for="cargoCadastro">Cargo</label>
         <input type="text" name="cargoCadastro">
-        <input type="submit" value="Cadastrar">
+        <input type="submit" value="Cadastrar" name="">
     </form>
     <div>
         <a href="index.php">Voltar</a>
@@ -24,12 +24,20 @@
 
         include('conexao.php');
 
-        $nome = msqli_real_escape_string($conexao, $_POST['nome']);
-        $usuario = mysqli_real_escape_string($conexao, $_POST['cargo']);
+        if(!isset($_POST['nomeCadastro'])) {
+            echo "<script> alert('Insira um nome, por favor.') </script>";
+        } else {
+            if(!isset($_POST['cargoCadastro'])) {
+                echo "<script> alert('insira um cargo, por favor.') </script>";
+            } else {
+                $nomeCadastro = $_POST["nomeCadastro"];
+                $cargoCadastro = $_POST["cargoCadastro"];
 
-        $sql = "SELECT COUNT(*) AS TOTAL FROM tb_usuario WHERE nome = '$nome'";
-        $result = mysqli_query($sql);
-        
+                $sql = "INSERT INTO tb_usuario (nome, cargo) VALUES ('$nomeCadastro', '$cargoCadastro')";
+
+                $res = $mysqli->query($sql);
+            }
+        }
 
     ?>
 </body>

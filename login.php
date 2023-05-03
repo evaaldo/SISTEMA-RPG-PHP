@@ -44,7 +44,6 @@
                         echo "<script> alert('Bem-vindo, jogador.'); </script>";
                     } else {
                         echo "<script> alert('Esse jogador não existe.'); </script>";
-                        header('Location: index.php');
                     }
 
                 }
