@@ -32,8 +32,9 @@
                 } else if(strlen($_POST['cargo']) == 0) {
                     echo "<script> alert('Insira seu cargo.') </script>";
                 } else {
-                    $nome = $mysqli->real_escape_string($_POST['nome']);
-                    $cargo = $mysqli->real_escape_string($_POST['cargo']);
+
+                    $nome = $_POST['nome'];
+                    $cargo = $_POST['cargo'];
 
                     $sql_code = "SELECT * FROM tb_usuario WHERE nome = '$nome' AND cargo = '$cargo'";
                     $sql_query = $mysqli->query($sql_code) or die("Falha na consulta do código SQL: " . $mysqli->error);
@@ -41,7 +42,7 @@
                     $quantidade = $sql_query->num_rows;
 
                     if($quantidade == 1) {
-                        echo "<script> alert('Bem-vindo, jogador.'); </script>";
+                        echo "<p class='usuario-nome'>Olá, ${nome}</p>";
                     } else {
                         echo "<script> alert('Esse jogador não existe.'); </script>";
                     }

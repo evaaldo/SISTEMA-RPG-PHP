@@ -36,7 +36,7 @@
     
                     $sql = "INSERT INTO tb_usuario (nome, cargo) VALUES ('$nomeCadastro', '$cargoCadastro')";
     
-                    $res = $mysqli->query($sql);
+                    $res = $mysqli->query($sql) or die("Falha na consulta do código SQL: " . $mysqli->error);
                 }
             }
         }
