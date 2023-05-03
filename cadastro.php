@@ -12,7 +12,7 @@
         <input type="text" name="nomeCadastro">
         <label for="cargoCadastro">Cargo</label>
         <input type="text" name="cargoCadastro">
-        <input type="submit" value="Cadastrar" name="">
+        <input type="submit" value="Cadastrar" name="acaoCadastro">
     </form>
     <div>
         <a href="index.php">Voltar</a>
@@ -24,20 +24,24 @@
 
         include('conexao.php');
 
-        if(!isset($_POST['nomeCadastro'])) {
-            echo "<script> alert('Insira um nome, por favor.') </script>";
-        } else {
-            if(!isset($_POST['cargoCadastro'])) {
-                echo "<script> alert('insira um cargo, por favor.') </script>";
+        if(isset($_POST['acaoCadastro'])) {
+            if(strlen($_POST['nomeCadastro']) == 0) {
+                echo "<script> alert('Insira um nome, por favor.') </script>";
             } else {
-                $nomeCadastro = $_POST["nomeCadastro"];
-                $cargoCadastro = $_POST["cargoCadastro"];
-
-                $sql = "INSERT INTO tb_usuario (nome, cargo) VALUES ('$nomeCadastro', '$cargoCadastro')";
-
-                $res = $mysqli->query($sql);
+                if(strlen($_POST['cargoCadastro']) == 0) {
+                    echo "<script> alert('insira um cargo, por favor.') </script>";
+                } else {
+                    $nomeCadastro = $_POST["nomeCadastro"];
+                    $cargoCadastro = $_POST["cargoCadastro"];
+    
+                    $sql = "INSERT INTO tb_usuario (nome, cargo) VALUES ('$nomeCadastro', '$cargoCadastro')";
+    
+                    $res = $mysqli->query($sql);
+                }
             }
         }
+
+        
 
     ?>
 </body>
