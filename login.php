@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +16,13 @@
         <label for="cargo">Cargo</label>
         <input type="text" name="cargo">
         <input type="submit" value="Entrar" name="acao">
+        <input type="button" value="Encerrar sessão" name="encerrar">
     </form>
     <div>
         <a href="index.php">Voltar</a>
         <br/>
         <a href="cadastro.php">Não é um jogador?</a>
+        <br/>
     </div>
 
     <?php //tela de login - PHP
@@ -42,7 +46,7 @@
                     $quantidade = $sql_query->num_rows;
 
                     if($quantidade == 1) {
-                        echo "<p class='usuario-nome'>Olá, ${nome}</p>";
+                        echo "<script> alert('Jogador encontrado!'); </script>";
                     } else {
                         echo "<script> alert('Esse jogador não existe.'); </script>";
                     }
@@ -50,6 +54,7 @@
                 }
             }
         }
+
     ?>
     
 </body>
