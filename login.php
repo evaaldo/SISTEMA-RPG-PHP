@@ -36,7 +36,6 @@
                 } else if(strlen($_POST['cargo']) == 0) {
                     echo "<script> alert('Insira seu cargo.') </script>";
                 } else {
-
                     $nome = $_POST['nome'];
                     $cargo = $_POST['cargo'];
 
@@ -46,7 +45,8 @@
                     $quantidade = $sql_query->num_rows;
 
                     if($quantidade == 1) {
-                        echo "<script> alert('Jogador encontrado!'); </script>";
+                        $_SESSION['nome'] = $nome;
+                        header('Location: home.php');
                     } else {
                         echo "<script> alert('Esse jogador não existe.'); </script>";
                     }
