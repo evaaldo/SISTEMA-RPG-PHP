@@ -23,24 +23,32 @@ body {
     color: var(--branco);
 }
 
+.titulo_rpg {
+    font-size: 5em;
+    margin-bottom: .5em;
+}
+
 body h1 {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 body a {
     text-decoration: none;
     color: var(--branco);
-    background-color: var(--preto);
-    margin-top: .5em;
+    background-color: none;
+    border: 2px solid var(--branco);
+    margin-top: 1em;
     border-radius: 15px;
     padding: .5em 1em;
     width: 200px;
     text-align: center;
     transition: all .4s;
+    
 }
 
 body a:hover {
-    opacity: .6;
+    background-color: var(--branco);
+    color: var(--preto);
 }
 
 form {
