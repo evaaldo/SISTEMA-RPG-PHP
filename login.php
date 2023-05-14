@@ -11,14 +11,16 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="crud.css">
 </head>
 <body>
+    <h1>Login</h1>
     <form method="post">
         <label for="apelidoLogin">Apelido</label>
         <input required type="text" name="apelidoLogin">
         <label for="cargoLogin">Cargo</label>
         <input required type="text" name="cargoLogin">
-        <input type="submit" value="Entrar" name="entrar">
+        <input class="botao_crud" type="submit" value="Entrar" name="entrar">
     </form>
     <a href="index.php">Voltar</a>
 
