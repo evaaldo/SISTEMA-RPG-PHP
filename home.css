@@ -26,7 +26,7 @@ h1 {
 
 .usuario_nome {
     color: var(--branco);
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
     font-weight: 700;
@@ -39,7 +39,7 @@ h1 {
     padding: .5em 1em;
     border: 2px solid var(--branco);
     border-radius: 15px;
-    position: fixed;
+    position: absolute;
     left: 20px;
     top: 10px;
     font-weight: 700;
