@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criação de jogador</title>
-    <link rel="stylesheet" href="crud.css">
+    <link rel="stylesheet" href="cadastroLogin.css">
 </head>
 <body>
     <h1>Cadastro</h1>
     <form class="cadastro" method="post">
         <label for="usuario">Usuário</label>
-        <input required type="text" name="usuario">
+        <input required type="text" name="usuario" placeholder="Usuário..">
         <label for="cargo">Cargo</label>
-        <input required type="text" name="cargo">
+        <input required type="text" name="cargo" placeholder="Cargo..">
         <label for="apelido">Apelido</label>
-        <input required type="text" name="apelido">
+        <input required type="text" name="apelido" placeholder="Apelido..">
         <input class="botao_crud" type="submit" value="Criar" name="criar">
     </form>
     <a href="index.php">Voltar</a>

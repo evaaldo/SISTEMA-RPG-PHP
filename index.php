@@ -15,7 +15,6 @@ session_start();
 </head>
 <body>
     <h1 class="titulo_rpg">Taverna</h1>
-    <h1>Jogadores</h1>
     <a href="cadastro.php">Criar um jogador</a>
     <a href="login.php">Acessar um jogador</a>
 </body>

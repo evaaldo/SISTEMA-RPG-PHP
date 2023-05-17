@@ -74,3 +74,11 @@ body a {
 body a:hover {
     opacity: .6;
 }
+
+form input {
+    background-color: var(--fundo);
+    border: 2px solid var(--branco);
+    border-radius: 15px;
+    color: var(--branco);
+    padding: .5em 1em;
+}
