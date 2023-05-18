@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --branco: #fff;
+    --preto: #131313;
+    --fundo: #222639;
+    --azul: rgb(73, 73, 242);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fundo);
+}
+
+h1 {
+    color: var(--branco);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.usuario_nome {
+    color: var(--branco);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.logout {
+    text-decoration: none;
+    color: var(--branco);
+    padding: .5em 1em;
+    border: 2px solid var(--branco);
+    border-radius: 15px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.logout:hover {
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+.chat {
+    position: absolute;
+    bottom: 0;
+    width: 350px;
+    background-color: var(--branco);
+    font-size: .85em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.chat h3 {
+    background-color: var(--azul);
+    color: var(--branco);
+    padding: 5px 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.chat-mensagens {
+    padding: .8em .3em;
+    display: flex;
+    gap: 5px;
+}
+
+.mensagem-jogador {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+.chat form {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.chat-caixa_texto{
+    color: var(--preto);
+    border: 2px solid var(--preto);
+    border-radius: 15px;
+    padding: .5em .6em;
+    margin: .5em;
+}
+
+.chat-caixa_botao {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--azul);
+    color: var(--branco);
+    font-weight: 700;
+    padding: 1em;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: .3s;
+    font-size: .8em;
+}
+
+.chat-caixa_botao:hover {
+    opacity: .8;
+}
+
+.mensagem-vazia {
+    text-align: center;
+    padding: 1em 0;
+}

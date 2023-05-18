@@ -15,7 +15,7 @@ if(!isset($_SESSION['apelidoLogin'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="rpg.css">
 </head>
 <body>
     <div>
@@ -26,6 +26,7 @@ if(!isset($_SESSION['apelidoLogin'])) {
         ?>
     </div>
     <div class="chat">
+        <h3>Bate-papo</h3>
         <?php
         include('conexaoMensagem.php');
 
@@ -36,25 +37,40 @@ if(!isset($_SESSION['apelidoLogin'])) {
 
         if($quantidade > 0) {
             while($row = $mostrarMensagem_query->fetch_object()) {
-                print "<p class='mensagem-jogador'>" . $row->jogador . "</p>";
+                print "<div class='chat-mensagens'>";
+                print "<p class='mensagem-jogador'>" . $row->jogador . ": </p>";
                 print "<p class='mensagem-conteudo'>" . $row->mensagem . "</p>";
+                print "</div>";
             }
-        }       
+        } else {
+            print "<p class='mensagem-vazia'>Suas mensagens aparecerão aqui</p>";
+        }     
         ?>
         <form method="post">
-            <input type="text" name="mensagem" placeholder="Digite aqui.." required>
-            <input type="submit" name="enviarMensagem" value="Enviar">
+            <input class="chat-caixa_texto" type="text" name="mensagem" placeholder="Digite aqui..">
+            <input class="chat-caixa_botao" type="submit" name="enviarMensagem" value="Enviar">
+            <input class="chat-caixa_botao" type="submit" name="apagarMensagem" value="Apagar">
         </form>
     </div>
 
     <?php
     include('conexaoMensagem.php');
     if(isset($_POST['enviarMensagem'])) {
-       $mensagem = $_POST['mensagem'];
-       $jogador = $_SESSION['apelidoLogin'];
+        if(strlen($_POST['mensagem']) != 0) {
+            $mensagem = $_POST['mensagem'];
+            $jogador = $_SESSION['apelidoLogin'];
 
-       $mensagem = "INSERT INTO tb_mensagens (jogador, mensagem) VALUES ('$jogador', '$mensagem')";
-       $mensagem_query = $conexao->query($mensagem);
+            $mensagem = "INSERT INTO tb_mensagens (jogador, mensagem) VALUES ('$jogador', '$mensagem')";
+            $mensagem_query = $conexao->query($mensagem);
+
+            header("Refresh: 0");
+        } else {
+            echo "<script>alert('Escreva uma mensagem!');</script>";
+        }
+    } if(isset($_POST['apagarMensagem'])) {
+        $apagarTudo = "DELETE FROM tb_mensagens";
+        $apagarTudo_query = $conexao->query($apagarTudo);
+        header("Refresh: 0");
     }
     ?>
 
