@@ -16,6 +16,7 @@ if(!isset($_SESSION['apelidoLogin'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="home.css">
+    <script src="https://kit.fontawesome.com/88cbac72fc.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
     <div>
@@ -25,6 +26,10 @@ if(!isset($_SESSION['apelidoLogin'])) {
         print "<p class='usuario_nome'><i class='fa-solid fa-user'></i> " . $_SESSION['apelidoLogin'] . "</p>";
         ?>
     </div>
+    <label for="chkChat"><i class="fa-solid fa-eye"></i></label>
+    <input class="chkChat" type="checkbox" name="chkChat" id="chkChat">
+    <label for="chkDice"><i class="fa-solid fa-dice"></i></label>
+    <input class="chkDice" type="checkbox" name="chkDice" id="chkDice">
     <div class="chat">
         <h3>Bate-papo</h3>
         <?php
@@ -35,21 +40,25 @@ if(!isset($_SESSION['apelidoLogin'])) {
 
         $quantidade = $mostrarMensagem_query->num_rows;
 
-        if($quantidade > 0) {
+        if($quantidade > 0 && $quantidade <= 10) {
             while($row = $mostrarMensagem_query->fetch_object()) {
                 print "<div class='chat-mensagens'>";
                 print "<p class='mensagem-jogador'>" . $row->jogador . ": </p>";
                 print "<p class='mensagem-conteudo'>" . $row->mensagem . "</p>";
                 print "</div>";
             }
-        } else {
+        } if($quantidade > 10) {
+            print "<p class='mensagem-vazia'>Máximo de 10 mensagens. Por favor, apague e recomece.</p>";
+        } if($quantidade == 0) {
             print "<p class='mensagem-vazia'>Suas mensagens aparecerão aqui</p>";
         }     
         ?>
         <form method="post">
             <input class="chat-caixa_texto" type="text" name="mensagem" placeholder="Digite aqui..">
-            <input class="chat-caixa_botao" type="submit" name="enviarMensagem" value="Enviar">
-            <input class="chat-caixa_botao apg" type="submit" name="apagarMensagem" value="Apagar">
+            <label for="enviarMensagem"><i class="fa-regular fa-paper-plane"></i></label>
+            <input id="enviarMensagem" class="chat-caixa_botao" type="submit" name="enviarMensagem" value="Enviar">
+            <label for="apagarMensagem"><i class="fa-solid fa-trash-can"></i></label>
+            <input id="apagarMensagem" class="chat-caixa_botao apg" type="submit" name="apagarMensagem" value="Apagar">
         </form>
     </div>
 
@@ -74,6 +83,12 @@ if(!isset($_SESSION['apelidoLogin'])) {
     }
     ?>
 
-<script src="https://kit.fontawesome.com/88cbac72fc.js" crossorigin="anonymous"></script>
+    <form class="dados" method="post">
+        <label for="d20"><i class="fa-solid fa-dice-d20"></i></label>
+        <input type="submit" value="" name="d20" id="d20">
+        <label for="d6"><i class="fa-solid fa-dice-d6"></i></label>
+        <input type="submit" value="" name="d6" id="d6">
+    </form>
+
 </body>
 </html>
