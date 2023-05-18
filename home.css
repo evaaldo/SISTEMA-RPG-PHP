@@ -10,6 +10,8 @@
     --preto: #131313;
     --fundo: #222639;
     --azul: rgb(73, 73, 242);
+    --roxo: rgb(123, 0, 255);
+    --vermelho: rgb(185, 5, 5);
 }
 
 body {
@@ -63,7 +65,7 @@ h1 {
 }
 
 .chat h3 {
-    background-color: var(--azul);
+    background-color: var(--roxo);
     color: var(--branco);
     padding: 5px 10px;
     border-top-left-radius: 15px;
@@ -77,7 +79,7 @@ h1 {
 }
 
 .mensagem-jogador {
-    color: var(--azul);
+    color: var(--vermelho);
     font-weight: 700;
 }
 
@@ -98,7 +100,7 @@ h1 {
 .chat-caixa_botao {
     border: none;
     border-radius: 10px;
-    background-color: var(--azul);
+    background-color: var(--roxo);
     color: var(--branco);
     font-weight: 700;
     padding: 1em;
@@ -106,6 +108,10 @@ h1 {
     cursor: pointer;
     transition: .3s;
     font-size: .8em;
+}
+
+.apg {
+    background-color: var(--vermelho);
 }
 
 .chat-caixa_botao:hover {

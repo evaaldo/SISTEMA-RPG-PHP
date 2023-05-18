@@ -15,7 +15,7 @@ if(!isset($_SESSION['apelidoLogin'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="rpg.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <div>
@@ -49,7 +49,7 @@ if(!isset($_SESSION['apelidoLogin'])) {
         <form method="post">
             <input class="chat-caixa_texto" type="text" name="mensagem" placeholder="Digite aqui..">
             <input class="chat-caixa_botao" type="submit" name="enviarMensagem" value="Enviar">
-            <input class="chat-caixa_botao" type="submit" name="apagarMensagem" value="Apagar">
+            <input class="chat-caixa_botao apg" type="submit" name="apagarMensagem" value="Apagar">
         </form>
     </div>
 
