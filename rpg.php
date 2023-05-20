@@ -15,7 +15,7 @@ if(!isset($_SESSION['apelidoLogin'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="rpg.css">
     <script src="https://kit.fontawesome.com/88cbac72fc.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
@@ -89,6 +89,16 @@ if(!isset($_SESSION['apelidoLogin'])) {
         <label for="d6"><i class="fa-solid fa-dice-d6"></i></label>
         <input type="submit" value="" name="d6" id="d6">
     </form>
+
+    <?php
+
+    if(isset($_POST['d20'])) {
+        print "<p class='dado_valor'>D20: " . mt_rand(1,20) . "</p>";
+    }   else if(isset($_POST['d6'])) {
+        print "<p class='dado_valor'>D6: " . mt_rand(1,6) . "</p>";
+    }
+
+    ?>
 
 </body>
 </html>

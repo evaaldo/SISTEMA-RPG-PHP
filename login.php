@@ -39,7 +39,7 @@ session_start();
 
         if($quantidade == 1) {
             $_SESSION['apelidoLogin'] = $_POST['apelidoLogin'];
-            header('Location: home.php');
+            header('Location: rpg.php');
         } else {
             echo "<script> alert('Erro no login.') </script>";
         }
