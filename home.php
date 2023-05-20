@@ -48,7 +48,7 @@ if(!isset($_SESSION['apelidoLogin'])) {
                 print "</div>";
             }
         } if($quantidade > 10) {
-            print "<p class='mensagem-vazia'>Máximo de 10 mensagens. Por favor, apague e recomece.</p>";
+            print "<p class='mensagem-vazia'>Máximo de 10 mensagens. Por favor, apague e recomece!</p>";
         } if($quantidade == 0) {
             print "<p class='mensagem-vazia'>Suas mensagens aparecerão aqui</p>";
         }     
