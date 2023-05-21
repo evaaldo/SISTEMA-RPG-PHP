@@ -100,5 +100,28 @@ if(!isset($_SESSION['apelidoLogin'])) {
 
     ?>
 
+    <select onchange="mostrarImagem()" id="opcao">
+        <option value="">Selecione uma opção</option>
+        <option value="grama.jpg">Grama</option>
+        <option value="mar.jpg">Mar</option>
+    </select>
+    <img id="imagem" class="hidden cenario" src="" alt="Cenário">
+
+    <script>
+        function mostrarImagem() {
+            var opcao = document.getElementById("opcao");
+            var imagem = document.getElementById("imagem");
+
+            if(opcao.value !== "") {
+                imagem.src = opcao.value;
+                imagem.classList.remove("hidden");
+            } else {
+                imagem.src = "";
+                imagem.classList.add("hidden");
+            }
+        }
+
+    </script>
+
 </body>
 </html>
