@@ -178,6 +178,7 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     gap: .2em;
     background-color: var(--branco);
     width: 50px;
@@ -185,10 +186,11 @@ h3 {
     font-size: 2em;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    position: relative;
+    position: absolute;
     transition: all .3s ease;
-    right: -1348px;
-    top: -330px;
+    top: 200px;
+    right: 0px;
+    opacity: 0;
 }
 
 .dados label {
@@ -208,5 +210,5 @@ h3 {
 }
 
 .chkDice:checked ~ .dados {
-    transform: translateY(330px);
+    opacity: 1;
 }

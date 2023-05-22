@@ -15,8 +15,8 @@ if(!isset($_SESSION['apelidoLogin'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="rpg.css">
     <script src="https://kit.fontawesome.com/88cbac72fc.js" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="taverna.css">
 </head>
 <body>
     <div>
