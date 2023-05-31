@@ -16,7 +16,7 @@ if(!isset($_SESSION['apelidoLogin'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <script src="https://kit.fontawesome.com/88cbac72fc.js" crossorigin="anonymous" defer></script>
-    <link rel="stylesheet" href="taverna.css">
+    <link rel="stylesheet" href="sala.css">
 </head>
 <body>
     <div>
@@ -101,7 +101,7 @@ if(!isset($_SESSION['apelidoLogin'])) {
     ?>
 
     <select onchange="mostrarImagem()" id="opcao">
-        <option value="">Selecione uma opção</option>
+        <option value="">Selecione um cenário</option>
         <option value="grama.jpg">Grama</option>
         <option value="mar.jpg">Mar</option>
     </select>

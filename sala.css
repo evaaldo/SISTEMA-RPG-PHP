@@ -226,3 +226,23 @@ h3 {
 .hidden {
     display: none;
 }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0!important;
+    background-color: var(--roxo);
+    color: var(--branco);
+    font-weight: 700;
+    background-image: none;
+    padding: .5em 1em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
